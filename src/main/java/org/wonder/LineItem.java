@@ -13,7 +13,7 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	double salesTax() {
+	public double salesTax() {
 		return totalAmount() * TAX_RATE;
 	}
 

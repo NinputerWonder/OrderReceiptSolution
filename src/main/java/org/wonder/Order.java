@@ -13,6 +13,14 @@ public class Order {
         this.lineItems = lineItems;
     }
 
+    public double totalSalesTax() {
+        double totalSalesTax = 0d;
+        for (LineItem lineItem : getLineItems()) {
+            totalSalesTax += lineItem.salesTax();
+        }
+        return totalSalesTax;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
