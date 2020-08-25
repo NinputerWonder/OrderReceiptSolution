@@ -13,6 +13,22 @@ public class Order {
         this.lineItems = lineItems;
     }
 
+    public String receipt() {
+        StringBuilder output = new StringBuilder();
+
+        output.append("======Printing Orders======\n");
+        output.append(getCustomerName());
+        output.append(getCustomerAddress());
+
+        for (LineItem lineItem : getLineItems()) {
+            output.append(lineItem.toString());
+        }
+
+        output.append("Sales Tax").append('\t').append(totalSalesTax());
+        output.append("Total Amount").append('\t').append(totalAmountOfLineItems());
+        return output.toString();
+    }
+
     public double totalAmountOfLineItems() {
         double totalAmountOfLineItems = 0d;
         for (LineItem lineItem : getLineItems()) {
