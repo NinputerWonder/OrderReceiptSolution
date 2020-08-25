@@ -13,8 +13,7 @@ public class OrderReceiptTest {
         final String CUSTOMER_NAME = "Mr X";
         final String CUSTOMER_ADDRESS = "Chicago, 60601";
 
-        Order order = new Order(CUSTOMER_NAME , CUSTOMER_ADDRESS , new ArrayList<LineItem>());
-        OrderReceipt receipt = new OrderReceipt(order);
+        OrderReceipt receipt = new OrderReceipt(new Order(CUSTOMER_NAME , CUSTOMER_ADDRESS , new ArrayList<LineItem>()));
 
         String output = receipt.printReceipt();
 
