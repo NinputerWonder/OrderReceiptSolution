@@ -10,13 +10,16 @@ import static org.junit.Assert.assertThat;
 public class OrderReceiptTest {
     @Test
     public void shouldPrintCustomerInformationOnOrder() {
-        Order order = new Order("Mr X", "Chicago, 60601", new ArrayList<LineItem>());
+        final String CUSTOMER_NAME = "Mr X";
+        final String CUSTOMER_ADDRESS = "Chicago, 60601";
+
+        Order order = new Order(CUSTOMER_NAME , CUSTOMER_ADDRESS , new ArrayList<LineItem>());
         OrderReceipt receipt = new OrderReceipt(order);
 
         String output = receipt.printReceipt();
 
-        assertThat(output, containsString("Mr X"));
-        assertThat(output, containsString("Chicago, 60601"));
+        assertThat(output, containsString(CUSTOMER_NAME));
+        assertThat(output, containsString(CUSTOMER_ADDRESS));
     }
 
     @Test
