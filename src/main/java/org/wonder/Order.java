@@ -3,9 +3,9 @@ package org.wonder;
 import java.util.List;
 
 public class Order {
-    String customerName;
-    String customerAddress;
-    List<LineItem> lineItems;
+    final String customerName;
+    final String customerAddress;
+    final List<LineItem> lineItems;
 
     public Order(String customerName, String customerAddress , List<LineItem> lineItems) {
         this.customerName = customerName;
