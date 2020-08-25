@@ -12,6 +12,10 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
+	double salesTax() {
+		return totalAmount() * .10;
+	}
+
 	public String getDescription() {
 		return description;
 	}
