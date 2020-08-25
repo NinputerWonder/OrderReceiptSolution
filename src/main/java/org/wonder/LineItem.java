@@ -16,11 +16,11 @@ public class LineItem {
 	@Override
 	public String toString() {
 		StringBuilder lineItemInfo = new StringBuilder();
-		lineItemInfo.append(getDescription());
+		lineItemInfo.append(description);
 		lineItemInfo.append('\t');
-		lineItemInfo.append(getPrice());
+		lineItemInfo.append(price);
 		lineItemInfo.append('\t');
-		lineItemInfo.append(getQuantity());
+		lineItemInfo.append(quantity);
 		lineItemInfo.append('\t');
 		lineItemInfo.append(totalAmount());
 		lineItemInfo.append('\n');
@@ -31,19 +31,7 @@ public class LineItem {
 		return totalAmount() * TAX_RATE;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-    double totalAmount() {
+	double totalAmount() {
         return price * quantity;
     }
 }
