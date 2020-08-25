@@ -13,6 +13,20 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder lineItemInfo = new StringBuilder();
+		lineItemInfo.append(getDescription());
+		lineItemInfo.append('\t');
+		lineItemInfo.append(getPrice());
+		lineItemInfo.append('\t');
+		lineItemInfo.append(getQuantity());
+		lineItemInfo.append('\t');
+		lineItemInfo.append(totalAmount());
+		lineItemInfo.append('\n');
+		return lineItemInfo.toString();
+	}
+
 	public double salesTax() {
 		return totalAmount() * TAX_RATE;
 	}
