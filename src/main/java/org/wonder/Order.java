@@ -17,10 +17,10 @@ public class Order {
         StringBuilder output = new StringBuilder();
 
         output.append("======Printing Orders======\n");
-        output.append(getCustomerName());
-        output.append(getCustomerAddress());
+        output.append(customerName);
+        output.append(customerAddress);
 
-        for (LineItem lineItem : getLineItems()) {
+        for (LineItem lineItem : lineItems) {
             output.append(lineItem.toString());
         }
 
@@ -31,7 +31,7 @@ public class Order {
 
     public double totalAmountOfLineItems() {
         double totalAmountOfLineItems = 0d;
-        for (LineItem lineItem : getLineItems()) {
+        for (LineItem lineItem : lineItems) {
             totalAmountOfLineItems += lineItem.totalAmount() + lineItem.salesTax();
         }
         return totalAmountOfLineItems;
@@ -39,21 +39,10 @@ public class Order {
 
     public double totalSalesTax() {
         double totalSalesTax = 0d;
-        for (LineItem lineItem : getLineItems()) {
+        for (LineItem lineItem : lineItems) {
             totalSalesTax += lineItem.salesTax();
         }
         return totalSalesTax;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getCustomerAddress() {
-        return customerAddress;
-    }
-
-    public List<LineItem> getLineItems() {
-        return lineItems;
-    }
 }
